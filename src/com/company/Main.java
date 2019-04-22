@@ -8,28 +8,23 @@ public class Main {
 
         public static void main(String[] args) {
             Scanner scanner = new Scanner(System.in);
+            int num = scanner.nextInt();
 
-            //String num = 0;
-            int i = 0;
-           int num = 0;
 
-            String primeNumbers = "";
 
-            for (i = 1; i <= 100; i++) {
-                int counter = 0;
-                for (num = i; num >= 1; num--) {
-                    if (i % num == 0) {
-                        counter = counter + 1;
-                    }
+            for (int i = 1; i <= num;  i++) {
+                int count= 0;
+                for (int j = 1; j <= i/2; j++) {
+                    if (i % j == 0)
+                        count = count + 1;
+
                 }
-                if (counter == 2) {
-                    //Appended the Prime number to the String
-                    primeNumbers = primeNumbers + i + " ";
-                    //primeNumbers= scanner.nextLine();
+                if (count == 2) {
+                    System.out.println(i+ " is a prime number");
                 }
+                else
+                System.out.println(i+ " is a not prime number");
             }
-            System.out.println("Prime numbers from 1 to 100 are :");
-            //num = scanner.nextLine();
-            System.out.println(primeNumbers);
+
         }
     }
